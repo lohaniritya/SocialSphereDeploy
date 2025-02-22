@@ -2,6 +2,9 @@ import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
 const app = express()
+import path from "path"
+
+const __dirname = path.resolve();
 
 //middlewares
 
@@ -22,6 +25,10 @@ import postRouter from './routes/post.route.js'
 app.use("/api/v1/users", userRouter)
 app.use("/api/v1/posts", postRouter)
 
+app.use(express.static(path.join(__dirname, "client/dist")))
+app.get("*", (_,res)=>{
+    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"))
+})
 
 // http://localhost:8000/api/v1/users/register
 
