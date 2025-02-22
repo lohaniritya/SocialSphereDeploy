@@ -4,7 +4,7 @@ import logo from "../../Images/logo.png";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Toast from "../../components/toast.jsx";
+import Toast from "../../components/Toast.jsx";
 
 function SignUp() {
   const [input, setInput] = useState({
@@ -39,7 +39,6 @@ function SignUp() {
       
       if (res.data.success) {
         navigate("/login");
-        // toast.success(res.data.message);
         setInput({
           userName: "",
           email: "",

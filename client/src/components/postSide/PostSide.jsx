@@ -12,7 +12,7 @@ import avatar from "../../Images/avatar.png";
 import axios from "axios";
 import { BaseUrl } from "../../constant.js";
 import { getAllPosts, createNewPost } from "../../slices/postSlice.js";
-import Toast from "../toast.jsx";
+import Toast from "../Toast.jsx";
 
 export default function PostSide() {
   const [image, setImage] = useState(null);
