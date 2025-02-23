@@ -52,7 +52,7 @@ export default function PostSide() {
       formdata.append("postImage", image); // Append the image directly
       
       try {
-        const res = await axios.post('http://localhost:8000/api/v1/posts/createPost', formdata); 
+        const res = await axios.post('https://socialsphere-5zqt.onrender.com/api/v1/posts/createPost', formdata); 
         // const res = await axios.post(`${BaseUrl}/posts/createPost`, data); 
         dispatch(createNewPost(res.data.data))
         
