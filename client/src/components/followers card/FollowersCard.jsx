@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { BaseUrl } from "../../constant";
-import { getAllUsers } from "../../slices/userSlice";
+import { BaseUrl } from "../../constant.js";
+import { getAllUsers } from "../../slices/userSlice.js";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import UserFollow from "../UserFollow";
+import UserFollow from "../UserFollow.jsx";
 import './followersCard.css'
 
 function FollowersCard() {

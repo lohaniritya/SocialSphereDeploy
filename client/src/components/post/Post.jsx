@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Post.css";
 import { BaseUrl } from "../../constant.js";
 import Comment from "../../Images/Comment.png";
-import Share from "../../Images/share.png";
+import Share from "../../Images/Share.png";
 import bookmark from "../../Images/b2.png";
 import defaultDP from "../../Images/avatar.png";
 import edit from "../../Images/edit.png";

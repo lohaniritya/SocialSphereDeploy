@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Logout from "../../Images/exit.png";
 import Edit from "../../Images/edit2.png";
-import LogoSearch from "../logoSearch/LogoSearch";
-import InfoCard from "../infoCard/InfoCard";
+import LogoSearch from "../logoSearch/LogoSearch.jsx";
+import InfoCard from "../infoCard/InfoCard.jsx";
 import { useDispatch } from "react-redux";
-import { logout } from "../../slices/userSlice";
+import { logout } from "../../slices/userSlice.js";
 import { useNavigate } from "react-router-dom";
-import Abc from "../Abc";
+import Abc from "../Abc.jsx";
 
 export default function ProfileLeft() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);

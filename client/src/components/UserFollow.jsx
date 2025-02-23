@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import avatar from '../Images/avatar.png'
-import {followUnfollowUser} from '../slices/userSlice'
+import {followUnfollowUser} from '../slices/userSlice.js'
 import axios from "axios";
-import { BaseUrl } from '../constant';
+import { BaseUrl } from '../constant.js';
 
 const UserFollow = ({ person }) => {
 

@@ -1,8 +1,8 @@
 import React from 'react'
 import './home.css'
-import ProfileSide from '../../components/profileSide/ProfileSide'
-import PostSide from '../../components/postSide/PostSide';
-import RightSide from '../../components/rightSide/RightSide';
+import ProfileSide from '../../components/profileSide/ProfileSide.jsx'
+import PostSide from '../../components/postSide/PostSide.jsx';
+import RightSide from '../../components/rightSide/RightSide.jsx';
 
 function HomePage() {
 

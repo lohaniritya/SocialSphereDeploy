@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router";
-import SignUp from "./pages/signup/SignUp";
-import Login from "./pages/login/Login";
-import HomePage from "./pages/dashboard/HomePage";
-import NotFound from "./pages/not found/NotFound";
-import Profile from "./pages/myProfile/Profile";
+import SignUp from "./pages/signup/SignUp.jsx";
+import Login from "./pages/login/Login.jsx";
+import HomePage from "./pages/dashboard/HomePage.jsx";
+import NotFound from "./pages/not found/NotFound.jsx";
+import Profile from "./pages/myProfile/Profile.jsx";
 import "./index.css";
 
 function App() {

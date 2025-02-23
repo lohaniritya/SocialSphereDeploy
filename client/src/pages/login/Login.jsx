@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { login } from "../../slices/userSlice";
+import { login } from "../../slices/userSlice.js";
 import Toast from "../../components/Toast.jsx";
 axios.defaults.withCredentials = true;
 
