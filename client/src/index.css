@@ -78,5 +78,7 @@ body {
 @media (max-width: 1024px) {
   .blur {
     background: transparent;
+    width: 1rem;
+    height: 1rem;
   }
 }

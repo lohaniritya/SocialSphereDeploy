@@ -67,7 +67,7 @@ function Login() {
         <div className=" rounded-2xl p-7 bg-white">
           <form
             onSubmit={handlSubmit}
-            className="flex flex-col items-center justify-center gap-2"
+            className="flex flex-col items-center justify-center text-xs md:text-sm gap-2"
           >
             <h3 className="text-xl md:text-2xl font-bold mb-2! md:p-4 text-gray-800">Login</h3>
 
@@ -98,9 +98,9 @@ function Login() {
             ></span>
 
             <span className="text-gray-600">
-              Don't have an account ?{"  "} <br className="md:hidden"/>
+              Don't have an account ?{"  "}
               <Link
-                to="/login"
+                to="/signup"
                 className="font-medium text-primary text-blue-500 transition-all duration-200 hover:underline"
               >
                 SignUp here

@@ -62,8 +62,8 @@ function SignUp() {
               <img src={logo} alt="logo" className=" h-10 w-10 md:h-18 md:w-18" />
               <h2 className="text-purple-800 text-2xl md:text-4xl font-bold">Welcome !</h2>
             </div>
-            <h5 className="font-bold">
-              Explore the ideas throughout <br className="hidden"/> the world.
+            <h5 className="font-bold text-center">
+              Explore the ideas throughout the world.
             </h5>
         </div>
 
