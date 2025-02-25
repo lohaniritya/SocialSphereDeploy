@@ -12,7 +12,7 @@ function App() {
     <>
       <div className="App">
         <div className="blur b1" style={{ top: "-18%", right: "0" }}></div>
-        <div className="blur b2" style={{ top: "36%", left: "-8rem" }}></div>
+        <div className="blur b2" style={{ top: "66%", left: "-8rem" }}></div>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Navigate to="/signup" replace />} /> 

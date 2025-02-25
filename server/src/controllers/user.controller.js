@@ -36,17 +36,23 @@ const register = asyncHandler(async (req, res) => {
       (field) => field?.trim() === ""
     )
   ) {
-    throw new ApiError(400, "All fields are mandatory");
+    return res
+    .status(400)
+    .json(new ApiResponse(400, "", "All fields are mandatory"));
   }
 
-  if (!isValidEmail(email)) throw new ApiError(409, "Invalid email");
+  if (!isValidEmail(email)) return res
+  .status(400)
+  .json(new ApiResponse(400, "", "Invalid email"));
 
   const existedUser = await User.findOne({
     $or: [{ userName }, { email }],
   });
 
   if (existedUser) {
-    throw new ApiError(409, "User with email or username already exists");
+    return res
+    .status(400)
+    .json(new ApiResponse(400, "", "User with email or username already exists"));
   }
 
   let profileImageLocalPath;
@@ -97,8 +103,14 @@ const register = asyncHandler(async (req, res) => {
 const login = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
-  if (!email) {
-    throw new ApiError(400, "email is required");
+  if (
+    [email, password].some(
+      (field) => field?.trim() === ""
+    )
+  ) {
+    return res
+    .status(400)
+    .json(new ApiResponse(400, "", "All fields are mandatory"));
   }
 
   const user = await User.findOne({
@@ -106,16 +118,17 @@ const login = asyncHandler(async (req, res) => {
   });
 
   if (!user) {
-    throw new ApiError(
-      404,
-      "User does not exist or email and pswd does not match"
-    );
+    return res
+    .status(400)
+    .json(new ApiResponse(400, "", "User doesn't exist"));
   }
 
   const isPasswordValid = await user.isPasswordCorrect(password);
 
   if (!isPasswordValid) {
-    throw new ApiError(401, "Invalid user credentials");
+    return res
+    .status(400)
+    .json(new ApiResponse(400, "", "Incorrect Password"));
   }
 
   const { accessToken, refreshToken } = await generateAccessAndRefereshTokens(

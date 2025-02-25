@@ -72,3 +72,11 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* media queries */
+
+@media (max-width: 1024px) {
+  .blur {
+    background: transparent;
+  }
+}
