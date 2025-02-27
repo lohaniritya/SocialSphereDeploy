@@ -21,7 +21,7 @@ const ProfileCard = ({ location }) => {
       <div className="ProfileImages">
         <img
           src={userData.coverImage ? userData.coverImage : defaultCover}
-          alt="image not available" className="max-h-70"
+          alt="image not available" className="max-h-60"
         />
         <img
           src={userData.profileImage ? userData.profileImage : avatar}
@@ -38,7 +38,7 @@ const ProfileCard = ({ location }) => {
 
       <div className="followStatus">
         <hr />
-        <div>
+        <div className="flex justify-center items-center">
           <div className="follow">
             <span>{numberOfFollowers}</span>
             <span>Followers</span>

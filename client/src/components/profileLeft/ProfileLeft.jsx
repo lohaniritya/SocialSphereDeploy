@@ -28,7 +28,7 @@ export default function ProfileLeft() {
   }
 
   return (
-    <div className="flex flex-col justify-between h-screen pl-10 ">
+    <div className="flex flex-col justify-between h-screen lg:pl-10 sm:pl-5 ">
       <div className="flex flex-col gap-5 items-center">
         <h1 className="font-extrabold bg-gradient-to-r from-sky-700 to-purple-600 bg-clip-text text-transparent text-3xl flex  ">
           Social Sphere

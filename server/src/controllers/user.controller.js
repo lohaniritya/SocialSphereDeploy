@@ -4,6 +4,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { User } from "../models/user.model.js";
 import { deleteImage, uploadOnCloudinary } from "../utils/cloudinary.js";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 
 const generateAccessAndRefereshTokens = async (userId) => {
   try {
@@ -431,18 +432,15 @@ const followUnfollowUser = asyncHandler(async (req, res) => {
 
 const migratePassword = asyncHandler(async (_, res) => {
   try {
-    const users = await User.find({ password: { $not: /^$2b\$|^$argon2i/ } });
-    
-    for (const user of users) {
-      user.password = "abhi123";
-      // const hashedPassword = await bcrypt.hash(user.password, 10)
-      await user.save({ validateBeforeSave: false });
-    }
+    const user1 = await User.findById("");
+    console.log(user1);
+    user1.password = "nova123";
+    await bcrypt.hash(user1.password, 10);
+    await user1.save({ validateBeforeSave: false });
+    return res.status(200).json(new ApiResponse(200, {}, "password updated"));
   } catch (error) {
-    console.log('Password migration failed:', error);
+    console.log("Password migration failed:", error);
   }
-
-  return res.status(200).json(new ApiResponse(200, {}, "password updated"));
 });
 
 export {

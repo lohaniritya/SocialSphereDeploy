@@ -7,8 +7,10 @@ import { ApiError } from "../utils/ApiError.js";
 
 const createPost = asyncHandler(async (req, res) => {
 
-  const user = await User.findById(req.user?._id);
-  
+  const user = await User.findById(req.user?._id).select(
+    "-password -refreshToken"
+  );
+
   const { caption } = req.body;
   let postImageLocalPath;
   if (
@@ -23,7 +25,7 @@ const createPost = asyncHandler(async (req, res) => {
   const newPost = await Post.create({
     caption,
     postImage: postImage?.url || "",
-    author: user,
+    author: user._id,
   });
 
   if (user) {

@@ -1,7 +1,64 @@
 .LogoSearch {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 500px) {
+  h1 {
+    display: inline;
+  }
+  .LogoSearch > img{
+    display: none;
+  }
+}
+
+
+
+@media (min-width:768px){
+  h1 {
+    display: none;
+  }
+  .LogoSearch > img{
+    display: inline;
+  }
+  .LogoSearch{
+    gap: 0.4rem;
+  }
+  .Search > input {
+    width: 60%;
+  }
+  .logodiv{
+    gap: 1rem;
+  }
+  .searchdiv{
+    padding-left: 3px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logodiv{
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+    border-bottom: rgb(219, 219, 219) 1px solid;
+    z-index: 50;
+  }
+  .searchdiv{
+    padding-left: 20px;
+  }
+  .LogoSearch {
+    
+    padding: 7px 15px;
+    justify-content: space-between;
+    
+  }
+  .Search {
+    height: 2rem;
+  }
 }
 
 .Search {
@@ -10,6 +67,7 @@
   border-radius: 10px;
   padding-left: 5px;
   height: 2.5rem;
+  position: relative;
 }
 
 .Search > input {
@@ -26,6 +84,9 @@
   border-radius: 5px;
   padding: 4px 8px;
   color: white;
+  position: absolute;
+  right: 0;
+  height: 2.5rem;
 }
 
 .s-icon:hover {

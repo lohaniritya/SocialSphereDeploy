@@ -31,7 +31,7 @@ const RightSide = () => {
 
                 {TrendData.map((trend) => {
                     return (
-                    <div className="trend">
+                    <div className="trend" key = {trend.id}>
                         <span>#{trend.name}</span>
                         <span>{trend.shares}k Shares</span>
                     </div>

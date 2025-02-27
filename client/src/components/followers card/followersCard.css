@@ -8,6 +8,51 @@
   padding: 0 10px;
 }
 
+@media (max-width:768px){
+  .FollowersCard {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  .FollowersCard > h3{
+    display: none;
+  }
+  .follower > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .follower {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between;
+    align-items: center; */
+  }
+  .namee{
+    display: none;
+  }
+  .follower > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .followerImg {
+    width: 3rem !important;
+    height: 3rem !important;
+    border-radius: 50%;
+    align-items: center;
+    justify-items: center;
+    display: flex;
+  }
+}
+
+@media (min-width:768px){
+  .FollowersCard{
+    height: 50px;
+    max-width: 310px;
+  }
+}
+
 .follower {
   display: flex;
   justify-content: space-between;

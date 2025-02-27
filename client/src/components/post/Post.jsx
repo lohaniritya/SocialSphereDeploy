@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Post.css";
 import { BaseUrl } from "../../constant.js";
-import Comment from "../../Images/Comment.png";
-import Share from "../../Images/Share.png";
+import comment from "../../Images/comment.png";
+import share from "../../Images/share.png";
 import bookmark from "../../Images/b2.png";
-import defaultDP from "../../Images/avatar.png";
+import avatar from "../../Images/avatar.png";
 import edit from "../../Images/edit.png";
 import Likee from "../../Images/like.png";
-import Unlike from "../../Images/Unlike.png";
+import unlike from "../../Images/unlike.png";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
@@ -31,7 +31,7 @@ const Post = ({ data }) => {
         setPostOwner(response.data.data);
       } catch (error) {
         console.log("Error fetching post owner:", error);
-        setPostOwner({ userName: "Unknown User", profileImage: defaultDP }); // Provide default data
+        setPostOwner({ userName: "Unknown User", profileImage: avatar }); // Provide default data
       }
     };
 
@@ -52,7 +52,7 @@ const Post = ({ data }) => {
       <div className="postowner flex items-center gap-2">
         <img
           className="rounded-full"
-          src={postOwner?.profileImage ? postOwner.profileImage : defaultDP}
+          src={postOwner?.profileImage ? postOwner.profileImage : avatar}
           alt=""
         />
         <span className=" font-bold">
@@ -69,13 +69,13 @@ const Post = ({ data }) => {
 
       <div className="postReact">
         <img
-          src={isPostLiked ? Likee : Unlike}
+          src={isPostLiked ? Likee : unlike}
           alt=""
           style={{ cursor: "pointer" }}
           onClick={handleLike}
         />
-        <img src={Comment} alt="" />
-        <img src={Share} alt="" />
+        <img src={comment} alt="" />
+        <img src={share} alt="" />
         <img src={bookmark} alt="" className="ml-auto!" />
       </div>
 

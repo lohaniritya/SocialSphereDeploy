@@ -6,6 +6,19 @@
     overflow: auto;
 }
 
+@media (max-width:768px){
+    .PostShare{
+        width: 50%;
+    }
+    .PostShare > img{
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+    .PostShare > div > input {
+        padding: 6px !important;
+        font-size: 12px !important;
+    }
+}
 
 .PostShare{
     display: flex;

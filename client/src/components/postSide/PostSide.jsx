@@ -112,17 +112,17 @@ export default function PostSide() {
               Photo
             </div>
 
-            <div className="option" style={{ color: "var(--video)" }}>
+            <div className="option hidden! lg:block!" style={{ color: "var(--video)" }}>
               <PlayCircleOutlineIcon />
               Video
             </div>
-            <div className="option" style={{ color: "var(--location)" }}>
+            <div className="option hidden! xl:block!" style={{ color: "var(--location)" }}>
               <LocationOnOutlinedIcon />
               Location
             </div>
-            <div className="option" style={{ color: "var(--shedule)" }}>
+            <div className="option hidden! 2xl:block!" style={{ color: "var(--shedule)" }}>
               <CalendarMonthOutlinedIcon />
-              Shedule
+              Schedule
             </div>
 
             <button className="button ps-button" onClick={handleSubmit}>
