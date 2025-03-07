@@ -9,7 +9,7 @@ import edit from "../../Images/edit.png";
 import Likee from "../../Images/like.png";
 import unlike from "../../Images/unlike.png";
 import { useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Post = ({ data }) => {
@@ -20,6 +20,7 @@ const Post = ({ data }) => {
   );
   const [totalLikes, setTotalLikes] = useState(data.likes.length);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
   
@@ -47,19 +48,25 @@ const Post = ({ data }) => {
     setIsPostLiked((prev) => !prev);
   };
 
+  const openProfile = async() => {
+    navigate(`/profile/${postOwner._id}`)
+  }
+  
+  if(data === null) return <div>No Posts to show</div>
   return (
     <div className="Post">
       <div className="postowner flex items-center gap-2">
         <img
-          className="rounded-full"
+          className="rounded-full cursor-pointer"
           src={postOwner?.profileImage ? postOwner.profileImage : avatar}
           alt=""
+          onClick={openProfile}
         />
-        <span className=" font-bold">
+        <span className=" font-bold cursor-pointer" onClick={openProfile}>
           {postOwner?.userName || "Loading..."}
         </span>
         {"/profile"===location.pathname ? (<img
-          className="ml-auto! edit h-8! w-8! cursor-pointer"
+          className="ml-auto! edit h-6! w-6! cursor-pointer"
           src={edit}
           alt=""
         />) : ("")}

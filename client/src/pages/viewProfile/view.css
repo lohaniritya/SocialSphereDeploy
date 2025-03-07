@@ -1,0 +1,13 @@
+.view {
+      position: relative;
+      display: grid;
+      grid-template-columns: 25% 40% 22%;
+      gap: 5%;
+      margin-top: 10px;
+    }
+    
+    .view-Center {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }

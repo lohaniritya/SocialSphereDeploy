@@ -55,7 +55,7 @@ function Login() {
             <h5 className="hidden md:block md:text-xl font-bold tracking-wide ">
               Explore the ideas throughout the world.
             </h5>
-            <h1 className="underline">Demo Id</h1>
+            <h5 className="underline">Demo Id</h5>
             <div>
             <h5 className="tracking-wide">Email: novadvani@gmail.com</h5>
             <h5 className="tracking-wide">Password: nova123</h5>

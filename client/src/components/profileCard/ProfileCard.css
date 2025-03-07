@@ -5,6 +5,7 @@
   gap: 1rem;
   background: var(--cardColor);
   overflow: hidden;
+  /* max-width: 300px; */
 }
 
 .ProfileImages {

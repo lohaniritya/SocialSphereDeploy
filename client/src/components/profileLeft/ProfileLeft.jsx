@@ -5,10 +5,12 @@ import LogoSearch from "../logoSearch/LogoSearch.jsx";
 import InfoCard from "../infoCard/InfoCard.jsx";
 import { useDispatch } from "react-redux";
 import { logout } from "../../slices/userSlice.js";
-import { useNavigate } from "react-router-dom";
-import Abc from "../Abc.jsx";
+import { useNavigate, useParams } from "react-router-dom";
+import EditProfile from "../EditProfile.jsx";
 
 export default function ProfileLeft() {
+
+  const { id } = useParams();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const openPopup = () => {
@@ -37,7 +39,7 @@ export default function ProfileLeft() {
         <InfoCard />
       </div>
 
-      <div className="flex flex-col gap-5 pb-15">
+      {!id ? (<div className="flex flex-col gap-5 pb-15">
         <div className="flex items-center gap-4">
           <img src={Edit} alt="" className="h-8 w-8" />
           <button
@@ -46,7 +48,7 @@ export default function ProfileLeft() {
           >
             Edit Profile
           </button>
-          {isPopupOpen && <Abc onClose={closePopup} />}
+          {isPopupOpen && <EditProfile onClose={closePopup} />}
         </div>
 
         <div className="flex items-center gap-4">
@@ -58,7 +60,8 @@ export default function ProfileLeft() {
             Logout
           </button>
         </div>
-      </div>
+      </div>) : ("")}
+      
     </div>
   );
 }

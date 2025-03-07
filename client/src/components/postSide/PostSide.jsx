@@ -7,7 +7,7 @@ import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import Post from "../post/Post.jsx";
 import "./postSide.css";
-import { useLocation } from 'react-router-dom';
+import { useLocation , useParams} from 'react-router-dom';
 import avatar from "../../Images/avatar.png";
 import axios from "axios";
 import { BaseUrl } from "../../constant.js";
@@ -23,6 +23,8 @@ export default function PostSide() {
   const { userData } = useSelector((state) => state.user);
   let { allPosts } = useSelector((state) => state.posts);
   axios.defaults.withCredentials = true
+
+  const { id } = useParams();
 
   const [toastMessage, setToastMessage] = useState(null);
       
@@ -52,7 +54,7 @@ export default function PostSide() {
       formdata.append("postImage", image); // Append the image directly
       
       try {
-        const res = await axios.post('https://socialsphere-5zqt.onrender.com/api/v1/posts/createPost', formdata); 
+        const res = await axios.post('http://localhost:8000/api/v1/posts/createPost', formdata); 
         // const res = await axios.post(`${BaseUrl}/posts/createPost`, data); 
         dispatch(createNewPost(res.data.data))
         
@@ -85,10 +87,13 @@ export default function PostSide() {
   if("/profile"===location.pathname){
     allPosts = allPosts.filter((post) => post.author === userData._id);
   }
+  if(id){
+    allPosts = allPosts.filter((post) => post.author === id);
+  }
 
   return (
     <div className="PostSide">
-      <div className="PostShare">
+      {!id ? (<div className="PostShare">
         <img
           src={userData.profileImage ? userData.profileImage : avatar}
           alt=""
@@ -148,13 +153,18 @@ export default function PostSide() {
             </div>
           )}
         </div>
-      </div>
-
+      </div>) : ("")}
+      
       <div className="Posts">
-        {allPosts?.map((post, id) => {
-          return <Post data={post} key={id} />;
-        })}
+        {allPosts?.length > 0 ? (
+          allPosts.map((post, id) => (
+            <Post data={post} key={id} />
+          ))
+        ) : (
+          <div className="text-center font-medium">"No posts yet! Check back later."</div>
+        )}
       </div>
+      
     </div>
   );
 }

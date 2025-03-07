@@ -4,6 +4,7 @@ import Login from "./pages/login/Login.jsx";
 import HomePage from "./pages/dashboard/HomePage.jsx";
 import NotFound from "./pages/not found/NotFound.jsx";
 import Profile from "./pages/myProfile/Profile.jsx";
+import ViewProfile from "./pages/viewProfile/ViewProfile.jsx";
 import "./index.css";
 
 function App() {
@@ -15,11 +16,12 @@ function App() {
         <div className="blur b2" style={{ top: "66%", left: "-8rem" }}></div>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Navigate to="/signup" replace />} /> 
+            <Route path="/" element={<Navigate to="/login" replace />} /> 
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="/homepage" element={<HomePage />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/:id" element={<ViewProfile />} />
             <Route path="*" element={<NotFound />} /> 
           </Routes>
         </BrowserRouter>

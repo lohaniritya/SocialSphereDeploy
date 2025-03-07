@@ -54,7 +54,7 @@ const Profile = () => {
       {!isMediumScreen && (
         <div>
           <LogoSearch />
-          <div className="py-15 px-4! flex flex-col max-w-120 items-center! mx-auto!">
+          <div className="py-15 px-4! flex flex-col max-w-320 items-center! mx-auto!">
             <ProfileCard location="profile" className="max-w-120 mx-auto!"/>
             <div className="Posts max-w-120 mx-auto!">
               {allPostByUser?.map((post, id) => {
