@@ -13,8 +13,6 @@ function BottomBanner() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   
     const openPopup = () => {
-      console.log("heeelooo");
-      
       setIsPopupOpen(true);
     };
   

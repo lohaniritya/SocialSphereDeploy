@@ -63,13 +63,11 @@ const ProfileCard = ({ location }) => {
   }
 
   const openEditProfile = () => {
-    console.log("edit");
-    setIsEditProfileOpen(true); // Set EditProfile to open
+    setIsEditProfileOpen(true);
   };
 
 
   const OpenMenu = ({onClose}) => {
-    console.log("in open");
     
     return(
     <div

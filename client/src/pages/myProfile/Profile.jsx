@@ -72,7 +72,7 @@ const Profile = () => {
             <ProfileCard location="profile" />
             <PostSide />
           </div>
-          <div className="pr-10">
+          <div>
             <RightSide />
           </div>
         </div>

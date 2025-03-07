@@ -48,8 +48,8 @@ function EditProfile({ onClose }) {
       className="fixed inset-0 z-50 flex justify-center items-center"
       style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
     >
-      <div className="bg-white rounded-lg shadow-lg p-6 w-120 flex flex-col justify-center">
-        <form className="flex flex-col gap-2 text-gray-600">
+      <div className="bg-white rounded-lg shadow-lg p-6 max-w-120 w-11/12 flex flex-col justify-center">
+        <form className="flex flex-col gap-2 text-gray-600 overflow-y-auto max-h-[80vh]">
           <h3 className="text-center text-2xl text-black font-bold mb-5!">Update Your Info</h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
