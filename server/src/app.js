@@ -9,6 +9,7 @@ const __dirname = path.resolve();
 //middlewares
 
 app.use(cors({
+    // origin: ["http://localhost:8000"],
     origin: ["https://socialsphere-5zqt.onrender.com"],
     credentials: true
 })) 
